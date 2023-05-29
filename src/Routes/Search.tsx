@@ -4,11 +4,11 @@ import { getSearch } from "../api";
 import styled from "styled-components";
 import { makeImagePath } from "../utils";
 
-interface ISerch {
-  results: ASD[];
+interface ISearch {
+  results: ISearchDetails[];
 }
 
-interface ASD {
+interface ISearchDetails {
   id: number;
   backdrop_path: string | null;
   media_type: string;
@@ -20,7 +20,7 @@ interface ASD {
 function Search() {
   const location = useLocation();
   const keyword = new URLSearchParams(location.search).get("keyword");
-  const { data, isLoading } = useQuery<ISerch>(["search", "info"], {
+  const { data, isLoading } = useQuery<ISearch>(["search", "info"], {
     enabled: !!keyword,
     queryFn: () => getSearch(keyword),
   });
