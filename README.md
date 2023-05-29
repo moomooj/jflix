@@ -13,3 +13,7 @@ react-router-dom (https://reactrouter.com/en/main)
 ## 영화 API
 
 https://www.themoviedb.org/
+
+## 페이지
+
+https://moomooj.github.io/jflix/#/
