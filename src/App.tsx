@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Home from "./Routes/Home";
 import Tv from "./Routes/Tv";
 import Search from "./Routes/Search";
@@ -8,8 +9,12 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tv" element={<Tv />} />
+        <Route path={"/"} element={<Home />}>
+          <Route path="movies/:movieId" element={<Home />} />
+        </Route>
+        <Route path="/tv" element={<Tv />}>
+          <Route path=":tvId" element={<Home />} />
+        </Route>
         <Route path="/search" element={<Search />} />
       </Routes>
     </BrowserRouter>

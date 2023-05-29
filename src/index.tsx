@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { RecoilRoot } from "recoil";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { theme } from "./theme";
 
 const GolbalStyle = createGlobalStyle`@font-face {
@@ -41,10 +42,11 @@ display: block;
   display: none;
 }
 body {
-margin: 0 auto;
 font-family: 'Pretendard-Regular';
-font-weight: 500;
+font-weight: 300;
 line-height: 1.2;
+color:${(props) => props.theme.white.darker};
+background-color: black;
 }
 menu, ol, ul {
 list-style: none;
@@ -71,16 +73,20 @@ color: inherit;
 }
 `;
 
+const client = new QueryClient();
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <>
     <RecoilRoot>
-      <ThemeProvider theme={theme}>
-        <GolbalStyle />
-        <App />
-      </ThemeProvider>
+      <QueryClientProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <GolbalStyle />
+          <App />
+        </ThemeProvider>
+      </QueryClientProvider>
     </RecoilRoot>
   </>
 );
