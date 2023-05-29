@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/jflix/static/js/main.da389623.js",
+    "main.js": "/jflix/static/js/main.8da99fb8.js",
     "index.html": "/jflix/index.html",
-    "main.da389623.js.map": "/jflix/static/js/main.da389623.js.map"
+    "main.8da99fb8.js.map": "/jflix/static/js/main.8da99fb8.js.map"
   },
   "entrypoints": [
-    "static/js/main.da389623.js"
+    "static/js/main.8da99fb8.js"
   ]
 }
